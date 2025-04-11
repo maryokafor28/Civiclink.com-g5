@@ -66,31 +66,7 @@ const FilterPanel: React.FC = () => {
         <button className="close-btn">x</button>
       </div>
 
-      <div className="section">
-  <label>Date</label>
-  <div className="date-inputs">
-    <div className="date-input">
-      <label htmlFor="fromDate">From</label>
-      <input
-        type="date"
-        id="fromDate"
-        name="fromDate"
-        value={filters.fromDate}
-        onChange={handleChange}
-      />
-    </div>
-    <div className="date-input">
-      <label htmlFor="toDate">To</label>
-      <input
-        type="date"
-        id="toDate"
-        name="toDate"
-        value={filters.toDate}
-        onChange={handleChange}
-      />
-    </div>
-</div>
-</div>
+
 <div className="underline"></div> 
 
 
@@ -111,6 +87,8 @@ const FilterPanel: React.FC = () => {
           </label>
         </div>
       </div>
+      <div className="underline"></div> 
+
 
       <div className="section">
         <label>Location</label>
