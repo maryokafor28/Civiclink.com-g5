@@ -1,5 +1,5 @@
-import React from 'react';
-// import './SearchOfficials.css';
+// import React from 'react';
+import '../styles/Searchofficials.css';
 import icon from '../assets/images/simple-line-icons_people.png';
 
 
