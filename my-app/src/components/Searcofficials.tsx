@@ -15,7 +15,8 @@ const SearchOfficials = () => {
           />
           <p>No Activity yet</p>
         </div>
-        <button className="search-button">Search</button>
+       <div><button className="search-button">Search</button>
+      </div>
       </div>
     </div>
   );
