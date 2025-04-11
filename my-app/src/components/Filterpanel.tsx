@@ -26,6 +26,8 @@ const FilterPanel: React.FC = () => {
     issue: '',
   });
 
+  const [visible, setVisible] = useState(true);
+
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, checked } = e.target;
     setFilters((prev) => ({
@@ -59,19 +61,19 @@ const FilterPanel: React.FC = () => {
     console.log('Applied Filters:', filters);
   };
 
+  if (!visible) return null;
+
   return (
     <div className="filter-panel">
       <div className="header">
         <h3>Filter by</h3>
-        <button className="close-btn">x</button>
+        <button className="close-btn" onClick={() => setVisible(false)}>x</button>
       </div>
 
-
-<div className="underline"></div> 
-
+      <div className="underline"></div>
 
       <div className="section">
-        <label>Official</label>
+        <label className="official">Official</label>
         <div className="checkbox-group">
           <label>
             <input type="checkbox" name="federal" checked={filters.official.federal} onChange={handleCheckboxChange} />
@@ -87,8 +89,32 @@ const FilterPanel: React.FC = () => {
           </label>
         </div>
       </div>
-      <div className="underline"></div> 
 
+      <div className="underline"></div>
+
+      <div className="department">
+        <label className="dept">Departments</label>
+        <div className="checkbox-group">
+          <div className="department-option">
+            <input type="checkbox" name="healthservices" onChange={handleCheckboxChange} />
+            <span>Health Services</span>
+          </div>
+          <div className="department-option">
+            <input type="checkbox" name="urbandepartment" onChange={handleCheckboxChange} />
+            <span>Urban Department</span>
+          </div>
+          <div className="department-option">
+            <input type="checkbox" name="education" onChange={handleCheckboxChange} />
+            <span>Education</span>
+          </div>
+          <div className="department-option">
+            <input type="checkbox" name="publicsafety" onChange={handleCheckboxChange} />
+            <span>Public Safety</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="underline"></div>
 
       <div className="section">
         <label>Location</label>
@@ -97,7 +123,7 @@ const FilterPanel: React.FC = () => {
 
       <div className="section">
         <label>Issues</label>
-        <select name="issue" value={filters.issue} onChange={handleChange} style={{color: filters.issue ? 'black':'#888'}} >
+        <select name="issue" value={filters.issue} onChange={handleChange} style={{ color: filters.issue ? 'black' : '#888' }}>
           <option value="">Select issues category</option>
           <option value="health">Health</option>
           <option value="education">Education</option>
