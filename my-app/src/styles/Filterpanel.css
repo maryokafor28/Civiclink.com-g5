@@ -82,7 +82,7 @@ body {
 }
 
 .department-option input[type="checkbox"] {
-  appearance: none;
+  /* appearance: none; */
   width: 16px;
   height: 16px;
   border-radius: 50%;
@@ -100,14 +100,12 @@ body {
 }
 .department-option:hover input[type="checkbox"] {
   opacity: 1;
-  /* color: #008844; */
 }
 
 .department-option span {
   cursor: pointer;
 }
 
-/* Input fields */
 input[type="text"],
 select {
   width: 100%;
