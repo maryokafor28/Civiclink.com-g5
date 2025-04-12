@@ -15,7 +15,9 @@
   vertical-align: middle;
   
 }
-
+.hello {
+  display: inline;
+}
 .topBar-icons {
   display: flex;
   align-items: center;
