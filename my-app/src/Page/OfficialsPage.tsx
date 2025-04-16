@@ -1,155 +1,90 @@
-
 import React from "react";
-import { useState } from "react";
-import { FaFilter } from "react-icons/fa";
-import OfficialCard from "./OfficialCard";
+import OfficialCard from "../Page/OfficialCard";
 import "../styles/OfficialsPage.css";
-import icon from "../assets/icon.png";
-// Image imports
-import MinisterTaiwoImg from "../assets/A-Taiwo.png";
-import OrieukwuStanley from "../assets/b-orieukwu.png";
-import EjirogheneAdesua  from "../assets/c-adesuwa.png";
-import RobertFox from "../assets/d-robert.png";
-import MarvinMcKinney from "../assets/e-marvin.png";
-import JennyWilson from "../assets/f-jenny.png";
-import KristinWatson from "../assets/g-kathryn.png";
-import JacobJones from "../assets/i-jacob.png";
-import FloydMiles from "../assets/j-flyod.png";
 
-// Federal Officials
 const federalOfficials = [
   {
     name: "Minister A. Taiwo",
     role: "Women Affairs",
+    image: "https://via.placeholder.com/60",
     tags: ["Health", "Education"],
-    image: MinisterTaiwoImg,
   },
   {
-    name: "Orieukwu Stanley ",
-    role: "City Council",
-    tags: ["Transport", "Parks"],
-    image: OrieukwuStanley,
-  },
-  {
-    name: "Ejiroghene Adesua ",
-    role: "Women Affairs",
-    tags: ["Health", "Education"],
-    image: EjirogheneAdesua ,
-  },
-  {
-    name: "Robert Fox",
-    role: "women Affairs",
-    tags: ["Health", "Education"],
-    image: RobertFox,
-  },
-  {
-    name: "Marvin McKinney",
-    role: "women Affairs",
-    tags: ["Health", "Education"],
-    image: MarvinMcKinney
+    name: "Mr. Bolaji Ahmed",
+    role: "Minister of Finance",
+    image: "https://via.placeholder.com/60",
+    tags: ["Economy", "Revenue"],
   },
 ];
 
-// State Officials
 const stateOfficials = [
   {
-    name: "Jenny Wilson",
-    role: "Women Affairs",
-    tags: ["Health", "Education"],
-    image: JennyWilson,
+    name: "Ms. Chinyere Obi",
+    role: "Commissioner for Education",
+    image: "https://via.placeholder.com/60",
+    tags: ["Schools", "Youth"],
   },
   {
-    name: "Kathryn Murphy",
-    role: "City Council",
-    tags: ["Transport", "Parks"],
-    image: MinisterTaiwoImg,
-  },
-  {
-    name: "Kristin Watson",
-    role: "Women Affairs",
-    tags: ["Health", "Education"],
-    image: KristinWatson,
-  },
-  {
-    name: "Jacob Jones",
-    role: "women Affairs",
-    tags: ["Health", "Education"],
-    image: JacobJones,
-  },
-  {
-    name: "Floyd Miles",
-    role: "women Affairs",
-    tags: ["Health", "Education"],
-    image: FloydMiles
+    name: "Mr. Danjuma Bello",
+    role: "State Health Coordinator",
+    image: "https://via.placeholder.com/60",
+    tags: ["Vaccination", "Health"],
   },
 ];
 
-const tabOptions = ["All Officials", "Federal", "State", "Local"];
 const OfficialsPage: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<string>("All");
-  const [searchTerm, setSearchTerm] = useState<string>("");
-
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(e.target.value);
-  };
-
-  const handleFilterClick = () => {
-    alert("Filter clicked!");
-  };
   return (
     <div className="officials-page">
-      <h1>Official Directory</h1>
-      <p>Browse and connect with verified government officials</p>
-
-      <div className="tabs-container">
-        {tabOptions.map((tab) => (
-          <button
-            key={tab}
-            className={`tab-button ${activeTab === tab ? "active" : ""}`}
-            onClick={() => setActiveTab(tab)}
-          >
-            {tab}
-          </button>
-        ))}
+      <div className="header">
+        <h1>Official Directory</h1>
+        <p>Browse and connect with verified government officials</p>
       </div>
 
-      <div className="search-filter-container">
-      <input 
+      <div className="tabs">
+        <button className="tab active">All Officials</button>
+        <button className="tab">Federal</button>
+        <button className="tab">State</button>
+        <button className="tab">Local</button>
+      </div>
+
+      <div className="search-filter">
+        <input
           type="text"
-          placeholder="🔍Search by name, role, or topics..."
-          value={searchTerm}
-          onChange={handleSearchChange}
-          />
-        <button className="filter-button" onClick={handleFilterClick}>
-         <FaFilter/>Filter
-        </button>
+          placeholder="Search by name, role, or topics..."
+          className="search-input"
+        />
+        <button className="filter-button">Filter</button>
       </div>
 
-      <div className="tab-content">
-        
-        {searchTerm && (
-          <p>
-            Searching for: <em>{searchTerm}</em>
-          </p>
-        )}
-      </div>
-      <section className="officials-section">
+      <div className="section">
         <h2>Federal Officials</h2>
-        <div className="officials-list">
+        <div className="card-container">
           {federalOfficials.map((official, index) => (
-            <OfficialCard key={index} {...official} />
+            <OfficialCard
+              key={index}
+              name={official.name}
+              role={official.role}
+              image={official.image}
+              tags={official.tags}
+            />
           ))}
         </div>
-      </section>
+      </div>
 
-      <section className="officials-section">
+      <div className="section">
         <h2>State Officials</h2>
-        <div className="officials-list">
+        <div className="card-container">
           {stateOfficials.map((official, index) => (
-            <OfficialCard key={index} {...official} />
+            <OfficialCard
+              key={index}
+              name={official.name}
+              role={official.role}
+              image={official.image}
+              tags={official.tags}
+            />
           ))}
         </div>
-      </section>
+      </div>
     </div>
   );
 };
