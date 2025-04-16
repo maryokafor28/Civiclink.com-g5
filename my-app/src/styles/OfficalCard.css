@@ -1,56 +1,55 @@
-.official-card {
-    display: flex;
-    align-items: flex-start;
-    width: 300px;
-    background-color: white;
-    border-radius: 16px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    padding: 16px;
-    gap: 12px;
-  }
-  
-  .official-image {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  
-  .official-info h3 {
-    margin: 0;
-    font-size: 16px;
-    color: #007a33;
-  }
-  
-  .official-info p {
-    margin: 4px 0;
-    font-size: 14px;
-    color: #666;
-  }
-  
-  .tag-list {
-    margin: 8px 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-  
-  .tag {
-    background-color: #e6f4ea;
-    color: #007a33;
-    padding: 4px 8px;
-    border-radius: 12px;
-    font-size: 12px;
-  }
-  
-  .message-button {
-    background-color: #007a33;
-    color: white;
-    border: none;
-    padding: 8px 14px;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 6px;
-    font-size: 14px;
-  }
-  
+/* .official-card {
+  display: flex;
+  align-items: flex-start;
+  width: 300px;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 16px;
+   gap: 12px; 
+}
+
+.official-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.official-info h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #007a33;
+}
+
+.official-info p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.tag-list {
+  margin: 8px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  background-color: #e6f4ea;
+  color: #007a33;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.message-button {
+  background-color: #007a33;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 6px;
+  font-size: 14px;
+} */
